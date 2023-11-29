@@ -1,5 +1,5 @@
 ### TECHSHOP
 run css
 ```bash
-    current: cdn for tailwind, it is included in head.php (app/component)
+    current: Rename folder after clone into "techadmin", add it in htdocs folder
 ``` 
