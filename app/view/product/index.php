@@ -75,10 +75,9 @@
 <script>
     $(document).on('click', '.add-button', function (){
         var main = this.closest('.main');
-        console.log(main);
         $.ajax({
             method: "POST",
-            url: "/techshop_admin/app/view/product/addProduct.php",
+            url: "/techadmin/app/view/product/addProduct.php",
             success: function (response){
                 main.innerHTML = response;
             }
