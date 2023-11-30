@@ -1,6 +1,6 @@
 <nav class="grid grid-cols-6 p-3 bg-[#49BF8C] gap-3">
     <div class="col-span-1 flex flex-row items-center justify-center">
-        <a href="/techshop_admin"><img src="/techshop_admin/admin/img/large.png" alt="Logo techshop" class="h-[72px] w-[72px] rounded-full"></a>
+        <a href="/techshop_admin"><img src="/techadmin/admin/img/large.png" alt="Logo techshop" class="h-[72px] w-[72px] rounded-full"></a>
     </div>     
     <div class="col-span-1 my-auto">
         <a href="#" class=" flex flex-row gap-3 p-1 items-center hover:bg-[#fff0d4] hover:rounded-lg justify-center hover:border-2 hover:border-[#111]">

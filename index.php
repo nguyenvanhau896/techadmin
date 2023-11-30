@@ -5,6 +5,6 @@
 		$uri = 'http://';
 	}
 	$uri .= $_SERVER['HTTP_HOST'];
-	header('Location: '.$uri.'/techshop_admin/admin/home/index');
+	header('Location: '.$uri.'/techadmin/admin/home/index');
 	exit;
 ?>
