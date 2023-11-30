@@ -23,7 +23,7 @@
                 </a>
             </div>
             <div class="col-span-1 bg-[#55dca2] rounded-3xl transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-[#55dc6a] duration-300">
-                <a href="/techadmin/app/view/mguser/index.php" class="p-4 flex flex-col items-center align-center">
+                <a href="/techadmin/admin/news/index" class="p-4 flex flex-col items-center align-center">
                     <img src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/news-512.png" alt="icon" class="w-1/3 mb-2">
                     <p class="text-lg font-semibold">Tin tức</p>
                 </a>
