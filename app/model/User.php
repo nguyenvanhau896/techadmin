@@ -14,7 +14,7 @@
                $_SESSION['login'] = true;  
                $_SESSION['user_id'] = $result[0]['user_id'];
             }else{
-                header('location: /techshop_admin/public/login/index');
+                header('location: /techshop_admin/admin/login/index');
                 echo "false";
                 exit();
             }
@@ -34,7 +34,7 @@
             if($stmt->rowCount() > 0){
                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }else{
-                header('location: /techshop_admin/public/login/index');
+                header('location: /techshop_admin/admin/login/index');
                 echo "false";
                 exit();
             }
