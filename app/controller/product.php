@@ -6,5 +6,8 @@ class Product extends Controller{
         
         $this->view('product/index', []);
     }
+    public function addProduct(){
+        $this->view('product/addProduct');
+    }
 }
 ?>
