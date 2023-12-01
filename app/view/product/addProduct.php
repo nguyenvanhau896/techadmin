@@ -109,7 +109,6 @@
         }else category.innerHTML = "";
     });
     $(document).on('click', '.add-product', function(e){
-        e.preventDefault();
         const category = document.querySelector('.category-select').value;
         const name = document.querySelector('.name').value;
         const price = document.querySelector('.price').value;
