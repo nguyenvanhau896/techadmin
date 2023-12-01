@@ -10,10 +10,10 @@
                         // Thiết lập chế độ lỗi để báo cáo tất cả các lỗi
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$offset = isset($_GET['offset']) ? intval($_GET['offset']) : 3;
-$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 3;
-
-$query1 = "SELECT * FROM paper  LIMIT $offset,$limit";
+$title = isset($_GET['title']) ? ($_GET['title']) : '1';
+$lowerTitle = strtolower($title);
+// Sử dụng truy vấn SQL với LIKE và LOWER()
+$query1 = "SELECT * FROM paper WHERE LOWER(name) LIKE '%$lowerTitle%'";
 $stmt1 = $conn->query($query1);
 $papers = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
