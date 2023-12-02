@@ -3,7 +3,7 @@
         <a href="/techadmin"><img src="/techadmin/admin/img/large.png" alt="Logo techshop" class="h-[72px] w-[72px] rounded-full"></a>
     </div>     
     <div class="col-span-1 my-auto">
-        <a href="#" class=" flex flex-row gap-3 p-1 items-center hover:bg-[#fff0d4] hover:rounded-lg justify-center hover:border-2 hover:border-[#111]">
+        <a href="/techadmin/admin/mguser/index" class=" flex flex-row gap-3 p-1 items-center hover:bg-[#fff0d4] hover:rounded-lg justify-center hover:border-2 hover:border-[#111]">
             <img src="https://cdn-icons-png.flaticon.com/512/6433/6433996.png" alt="icon" class="w-6">
             <span class="text-base font-semibold">Người dùng</span>
         </a>
