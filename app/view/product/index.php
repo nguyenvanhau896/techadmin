@@ -21,9 +21,11 @@
                 <div class="relative mr-auto">
                     <input type="text" id="table-search" class="block pt-2 ps-10 text-sm text-gray-900 border border-[#1c543c] rounded-lg w-80 bg-[#93e7be] focus:ring-[#02110a] focus:border-[#02110a]" placeholder="Search for items">
                 </div>
-                <button type="button" class="add-button mt-1 text-lg text-black bg-[#55dc6a] hover:bg-[#b1dc55] border border-[#082619] focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full px-5 py-2.5 text-center me-2 mb-2">Add Product</button>
+                <a href="/techadmin/admin/product/addProduct">
+                    <button type="button" class="add-button mt-1 text-lg text-black bg-[#55dc6a] hover:bg-[#b1dc55] border border-[#082619] focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full px-5 py-2.5 text-center me-2 mb-2">Add Product</button>
+                </a>
             </div>
-            <table class="w-full text-md text-left rtl:text-right text-gray-500">
+            <table class="w-full text-md text-left rtl:text-right text-[#082619]">
                 <thead class="text-md text-black uppercase">
                     <tr>
                         <th scope="col" class="px-6 py-3">
@@ -33,12 +35,12 @@
                             Product name
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Color
+                            Image
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 text-center">
                             Category
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 text-right">
                             Price
                         </th>
                         <th scope="col" class="text-center px-6 py-3">
@@ -47,41 +49,49 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        $server_name = "localhost";
+                        $user_name = "root";
+                        $password = "";
+                        $database = "techshop";
+                                        
+                        $conn = mysqli_connect($server_name, $user_name, $password, $database);
+                        if (!$conn) {
+                            echo "Connection failed!";
+                        }
+                        $query = "SELECT * FROM `product`";
+                        if ($query_product = $conn->query($query)){
+                            while($row = mysqli_fetch_assoc($query_product)){
+                    ?>
                     <tr class="border-b hover:bg-[#93e7be]">
                         <td class="px-6 py-4">
-                            1
+                            <?=$row["id"];?>
                         </td>
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            Apple MacBook Pro 17"
+                            <?=$row["name"];?>
                         </th>
-                        <td class="px-6 py-4">
-                            Silver
+                        <td class="px-6 py-4 flex justify-start">
+                            <img src="<?=$row["image"];?>" alt="image" class="w-10 h-10">
                         </td>
-                        <td class="px-6 py-4">
-                            Laptop
+                        <td class="px-6 py-4 text-center">
+                            <?=$row["category"];?>
                         </td>
-                        <td class="px-6 py-4">
-                            $2999
+                        <td class="px-6 py-4 text-right">
+                            <?=number_format($row["price"], 0, '', '.') . ' ₫';?>
                         </td>
                         <td class="text-center px-6 py-4">
                             <a href="#" class="text-center font-medium text-blue-600 hover:underline">Edit</a>
                         </td>
                     </tr>
+                    <?php
+                            }
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>
     </div>
 </body>
 <script>
-    $(document).on('click', '.add-button', function (){
-        var main = this.closest('.main');
-        $.ajax({
-            method: "POST",
-            url: "/techadmin/app/view/product/addProduct.php",
-            success: function (response){
-                main.innerHTML = response;
-            }
-        })
-    });
 </script>
 </html>
