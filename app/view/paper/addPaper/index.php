@@ -106,8 +106,8 @@ $password = '';
     }
 ?>
 
-<div class="container p-2 flex flex-row mx-auto">
-    <div class="container p-2 flex flex-row mx-auto  justify-center ">
+<div class="p-2 flex flex-row mx-auto">
+    <div class="p-2 flex flex-row mx-auto  justify-center ">
     
     <form method="post">
 
@@ -118,7 +118,6 @@ $password = '';
         echo ' <label for="name" class="text-[1.4rem] font-medium">Tiêu đề bài viết</label> <br> <textarea id="name" name="name" type="text" class="text-6xl font-semibold bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"cols="24" rows="4">'.$name .'</textarea>';
         echo '<div class="text-red-700">*'.$nameEr.'</div>';
         echo ' <div class="content">  ';
-        echo $paper['dateRealease'];
         echo '<div class="text-[1.4rem] font-medium">Ngày đăng: </div> <input readonly="readonly" id="dateRelease" name="dateRelease" type="text" value="'.$dateRelease.'" class="text-gray-600 text-[1rem] bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"> ';
         ?>
 

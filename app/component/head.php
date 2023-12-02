@@ -25,7 +25,7 @@
     }
 }
   
-/* Custom, iPhone Retina */ @media screen and (max-width: 321px){
+/* Custom, iPhone Retina */ @media screen and (max-width: 390px){
     html {
         font-size:4px;
     }
