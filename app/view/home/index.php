@@ -1,3 +1,5 @@
+<?php require_once '../app/component/checkAdminLogin.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

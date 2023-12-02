@@ -1,9 +1,6 @@
 <?php 
 class Login extends Controller{
     public function index($name=''){
-        // $user = $this->model('User');
-        // $user->name = $name;
-        
         $this->view('login/index', []);
     }
     public function login(){
@@ -19,8 +16,8 @@ class Login extends Controller{
         }else{
             echo "don't post";
         }
-        if(isset($_SESSION['login']) && $_SESSION['login']){
-            header('location: /techshop');
+        if(isset($_SESSION['admin']) && $_SESSION['admin']){
+            header('location: /techadmin/admin/login/index');
             exit();
         }else{
             echo "false connect";
@@ -31,7 +28,7 @@ class Login extends Controller{
         session_destroy();
         $_SESSION = array();
         //
-        header('location: /techshop');
+        header('location: /techadmin/admin/login/index');
         exit();
     }
 }
