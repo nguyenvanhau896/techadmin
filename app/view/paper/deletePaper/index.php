@@ -3,6 +3,30 @@
 <head>
     <?php require_once '../app/component/head.php';?>
     <title>Paper</title>
+    <style>
+/* Large Devices, Wide Screens */ @media screen and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }    
+}
+/* Medium Devices, Desktops */ @media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* Small Devices, Tablets */ @media screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+}
+/* Extra Small Devices, Phones */ @media screen and (max-width: 480px){
+    html {
+        font-size: 6px;
+    }
+}
+  
+
+</style>
 </head>
 <body class="bg-[#E2F9EC]">
 <?php require_once '../app/component/nav.php'?>

@@ -3,6 +3,30 @@
 <head>
     <?php require_once '../app/component/head.php';?>
     <title>Paper</title>
+    <style>
+/* Large Devices, Wide Screens */ @media screen and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }    
+}
+/* Medium Devices, Desktops */ @media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* Small Devices, Tablets */ @media screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+}
+/* Extra Small Devices, Phones */ @media screen and (max-width: 480px){
+    html {
+        font-size: 6px;
+    }
+}
+  
+
+</style>
 </head>
 <body class="bg-[#E2F9EC]">
 <?php require_once '../app/component/nav.php'?>
@@ -192,7 +216,7 @@ $password = '';
 </form>
 
 <!-- ----------------------------list papers------------------------------------------------ -->
-<div class=" max-w-sm p-4 bg-[#E2F9EC] border border-gray-220 rounded-lg shadow sm:p-6 " style=" max-height: 38rem;">
+<div class=" max-w-sm p-[1rem] bg-[#E2F9EC] border border-gray-220 rounded-lg shadow sm:p-6 " style=" max-height: 43rem;">
             <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl">
             BÀI VIẾT ĐƯỢC XEM NHIỀU NHẤT
             </h5>
@@ -203,7 +227,7 @@ $password = '';
  
             // Lấy tất cả các dòng dữ liệu từ kết quả truy vấn
             $papers2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-            echo ' <ul class="my-4 space-y-3">';
+            echo ' <ul class="my-4 space-y-3 flex flex-col content-center h-[38rem] items-center">';
             $i =1;
             forEach ($papers2 as $paper2Item) {
                 // $query_string = http_build_query($paper2Item);

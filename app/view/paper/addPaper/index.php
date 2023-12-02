@@ -3,6 +3,30 @@
 <head>
     <?php require_once '../app/component/head.php';?>
     <title>Paper</title>
+    <style>
+/* Large Devices, Wide Screens */ @media screen and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }    
+}
+/* Medium Devices, Desktops */ @media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* Small Devices, Tablets */ @media screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+}
+/* Extra Small Devices, Phones */ @media screen and (max-width: 480px){
+    html {
+        font-size: 6px;
+    }
+}
+  
+
+</style>
 </head>
 <body class="bg-[#E2F9EC]">
 <?php require_once '../app/component/nav.php'?>
@@ -203,7 +227,7 @@ $password = '';
     <div class="flex justify-center items-center m-[2rem]">
     <button type="submit" class="text-[2.4rem] inline-flex items-center px-3 py-2  font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 hover:scale-110  w-[20rem] text-center flex flex-row justify-center">
                         Thêm
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="34" viewBox="0 0 35 34" fill="none" class=" ms-[1rem]">
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 35 34" fill="none" class="w-[2rem] h-[2rem] ms-[1rem]">
                     <path d="M13.125 0V12.6021H0V21.0035H13.125V33.6056H21.875V21.0035H35V12.6021H21.875V0H13.125Z" fill="white"/>
                     </svg>
     </button>

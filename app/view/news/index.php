@@ -3,7 +3,30 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <?php require_once '../app/component/head.php';?>
-    
+    <style>
+/* Large Devices, Wide Screens */ @media screen and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }    
+}
+/* Medium Devices, Desktops */ @media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* Small Devices, Tablets */ @media screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+}
+/* Extra Small Devices, Phones */ @media screen and (max-width: 480px){
+    html {
+        font-size: 6px;
+    }
+}
+  
+
+</style>
 </head>
 <body class="bg-[#E2F9EC]"> 
 
@@ -27,7 +50,7 @@
     <div class="text-[4rem] p-[2rem] font-bold text-slate-700">  Quản lí bài viết </div>
     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md ms-8 flex flex-row justify-center text-center items-center h-[5rem]"> 
         <a href="/techadmin/admin/addPaper/index" class="text-[1.6rem]"> Thêm bài viết mới </a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="34" viewBox="0 0 35 34" fill="none" class=" ms-2">
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 35 34" fill="none" class="w-[2rem] h-[2rem] ms-2">
         <path d="M13.125 0V12.6021H0V21.0035H13.125V33.6056H21.875V21.0035H35V12.6021H21.875V0H13.125Z" fill="white"/>
         </svg>
     </button>
