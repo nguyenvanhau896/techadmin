@@ -9,5 +9,8 @@ class Product extends Controller{
     public function addProduct(){
         $this->view('product/addProduct');
     }
+    public function editProduct(){
+        $this->view('product/editProduct');
+    }
 }
 ?>
