@@ -72,8 +72,7 @@
                     <div class="w-full px-3 mb-6 md:mb-0 flex">
                         <button type="button" class="mr-auto bg-[#b4efd0] hover:bg-[#b1dc55] text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" onclick="redirectToBack()">
                             <img src="https://cdn-icons-png.flaticon.com/512/61/61449.png" alt="icon" class="w-4 h-4 mr-3">
-                            <span>Trở về</span>
-                            </a>  
+                            <span>Trở về</span> 
                         </button>
                         <button type="submit" class="add-product bg-[#b4efd0] hover:bg-[#b1dc55] text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
                             <img src="https://icons.veryicon.com/png/o/miscellaneous/8atour/submit-successfully.png" alt="icon" class="w-4 h-4 mr-3">
