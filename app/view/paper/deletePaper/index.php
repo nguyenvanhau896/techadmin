@@ -3,6 +3,30 @@
 <head>
     <?php require_once '../app/component/head.php';?>
     <title>Paper</title>
+    <style>
+/* Large Devices, Wide Screens */ @media screen and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }    
+}
+/* Medium Devices, Desktops */ @media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* Small Devices, Tablets */ @media screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+}
+/* Extra Small Devices, Phones */ @media screen and (max-width: 480px){
+    html {
+        font-size: 6px;
+    }
+}
+  
+
+</style>
 </head>
 <body class="bg-[#E2F9EC]">
 <?php require_once '../app/component/nav.php'?>
@@ -37,8 +61,8 @@ $password = '';
 }
 ?>
 
-<div class="container p-2 flex flex-row mx-auto">
-    <div class="container p-2 flex flex-row mx-auto  justify-center ">
+<div class=" p-2 flex flex-row mx-auto">
+    <div class=" p-2 flex flex-row mx-auto  justify-center ">
     
     <form method="post">
 
@@ -56,7 +80,7 @@ $password = '';
         echo ' <label for="name" class="text-[1.4rem] font-medium">Tiêu đề bài viết</label> <br> <textarea readonly id="name" name="name" type="text" class="text-6xl font-semibold bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"cols="24" rows="4">'.$paper['name'] .'</textarea>';
 
         echo ' <div class="content">  ';
-        echo $paper['dateRealease'];
+        
         echo '<div class="text-[1.4rem] font-medium">Ngày đăng: </div> <input readonly="readonly" id="dateRelease" name="dateRelease" type="text" value="'.$paper['dateRelease'].'" class="text-gray-600 text-[1rem] bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"> ';
         ?>
 

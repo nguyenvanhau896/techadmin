@@ -3,7 +3,30 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <?php require_once '../app/component/head.php';?>
-    
+    <style>
+/* Large Devices, Wide Screens */ @media screen and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }    
+}
+/* Medium Devices, Desktops */ @media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* Small Devices, Tablets */ @media screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+}
+/* Extra Small Devices, Phones */ @media screen and (max-width: 480px){
+    html {
+        font-size: 6px;
+    }
+}
+  
+
+</style>
 </head>
 <body class="bg-[#E2F9EC]"> 
 
@@ -27,7 +50,7 @@
     <div class="text-[4rem] p-[2rem] font-bold text-slate-700">  Quản lí bài viết </div>
     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md ms-8 flex flex-row justify-center text-center items-center h-[5rem]"> 
         <a href="/techadmin/admin/addPaper/index" class="text-[1.6rem]"> Thêm bài viết mới </a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="34" viewBox="0 0 35 34" fill="none" class=" ms-2">
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 35 34" fill="none" class="w-[2rem] h-[2rem] ms-2">
         <path d="M13.125 0V12.6021H0V21.0035H13.125V33.6056H21.875V21.0035H35V12.6021H21.875V0H13.125Z" fill="white"/>
         </svg>
     </button>
@@ -42,7 +65,7 @@
             <input type="search" id="searchTitle" class="block w-[26rem] py-[1rem] pr-[8rem] ps-10 text-gray-900 border border-gray-300 rounded-lg text-[1.6rem] " placeholder="Search title paper">
             <button id="search" type="button" class="text-white absolute right-[1rem] h-[2.8rem] w-[6rem] top-[0.6rem] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[1.2rem] px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
         </div>
-    </fdiv>
+    </div>
     <div class="text-[2.4rem] p-[2rem] pt-[1rem] font-bold text-slate-700"> Danh sách bài viết: </div>
 
     
@@ -70,7 +93,7 @@
                 <a href="">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">'.$paperItem['name'].'</h5>
                 </a>';
-        echo '<p class="mb-3 font-normal text-gray-700 ">'.substr($paperItem['description'],27,120).'...</p>';
+        echo '<p class="mb-3 font-normal text-gray-700 ">'.substr($paperItem['description'],0,120).'...</p>';
         echo '<a href="/techadmin/admin/editPaper/index?id='.$paperItem['id'].'" class="absolute text-[1.2rem] bottom-2 left-[2rem] inline-flex items-center px-3 py-2  font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[8.6rem] text-center flex flex-row justify-center">
                     Chỉnh sửa
                     <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70 70" fill="none" class="ms-2 w-[1rem] h-[1.6rem]">
@@ -124,7 +147,7 @@ $(document).ready(function () {
 // ///////////////////////////////////////////SEARCH/////////////////////////////////////////////////////
     
     var title='';
-    $("#search").on("click", function () {
+    $("#searchTitle").on("input", function () {
         // Gọi Ajax để lấy dữ liệu mới
         title = document.querySelector('#searchTitle').value;
         

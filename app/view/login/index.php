@@ -1,3 +1,8 @@
+<?php 
+	if(isset($_SESSION['admin'])){
+		header('location: /techadmin');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +22,7 @@
     <div class="container" id="container">
 	<!--                    sign-in                          -->
 	<div class="form-container sign-in-container">
-		<form action="/techshop/public/login/login" name='login' method="post">
+		<form action="/techadmin/admin/login/login" name='login' method="post">
 			<h1>Hello Admin</h1>
 			<div class="social-container">
 				<a href="#" class="social">

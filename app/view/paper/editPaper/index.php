@@ -3,6 +3,30 @@
 <head>
     <?php require_once '../app/component/head.php';?>
     <title>Paper</title>
+    <style>
+/* Large Devices, Wide Screens */ @media screen and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }    
+}
+/* Medium Devices, Desktops */ @media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* Small Devices, Tablets */ @media screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+}
+/* Extra Small Devices, Phones */ @media screen and (max-width: 480px){
+    html {
+        font-size: 6px;
+    }
+}
+  
+
+</style>
 </head>
 <body class="bg-[#E2F9EC]">
 <?php require_once '../app/component/nav.php'?>
@@ -35,16 +59,16 @@ $password = '';
         // /////////////////////////////////////////////////////////////////////////////////
         function checkBirhday(){
             
-            $day = (int)$_POST['day'];
-            $month = (int)$_POST['month'];
-            $year = (int)$_POST['year'];
+            $day1 = (int)$_POST['day'];
+            $month1 = (int)$_POST['month'];
+            $year1 = (int)$_POST['year'];
             
-            if($day != 0 && $month != 0 && $year != 0) 
+            if($day1 != 0 && $month1 != 0 && $year1 != 0) 
             {
-                $maxDaysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
-                return $day <= $maxDaysInMonth;
+                $maxDaysInMonth = cal_days_in_month(CAL_GREGORIAN, $month1, $year1);
+                return $day1 <= $maxDaysInMonth;
             }
-            else if($day == 0 && $month == 0 && $year == 0) return true;
+            else if($day1 == 0 && $month1 == 0 && $year1 == 0) return true;
             else
             return false;
         }
@@ -78,10 +102,10 @@ $password = '';
     }
 ?>
 
-<div class="container p-2 flex flex-row mx-auto">
-    <div class="container p-2 flex flex-row mx-auto  justify-center ">
+<div class="flex flex-row mx-auto">
+    <div class=" p-2 flex flex-row mx-auto  justify-center ">
     
-    <form method="post">
+    <form method="post" class="w-[40rem]">
 
     <?php
      if (isset($_GET['id'])) {
@@ -94,10 +118,10 @@ $password = '';
         $stmt->execute();
         $paper = $stmt->fetch(PDO::FETCH_ASSOC);
         echo '<div class="main w-[100%]">';
-        echo ' <label for="name" class="text-[1.4rem] font-medium">Tiêu đề bài viết</label> <textarea id="name" name="name" type="text" class="text-6xl font-semibold bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"cols="24" rows="4">'.$paper['name'] .'</textarea>';
+        echo ' <label for="name" class="text-[1.4rem] font-medium">Tiêu đề bài viết</label> <br> <textarea id="name" name="name" type="text" class="w-[34rem] text-6xl font-semibold bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" cols="24" rows="4">'.$paper['name'] .'</textarea>';
 
         echo ' <div class="content">  ';
-        echo $paper['dateRealease'];
+        
         echo '<div class="text-[1.4rem] font-medium">Ngày đăng: </div> <input readonly="readonly" id="dateRelease" name="dateRelease" type="text" value="'.$paper['dateRelease'].'" class="text-gray-600 text-[1rem] bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"> ';
         ?>
 
@@ -154,7 +178,7 @@ $password = '';
         <?php 
         echo ' <div class="text-[1.4rem] font-medium">Link hình ảnh</div> ';
         echo '<div class="flex justify-center flex-col ">';
-        echo '<input id="image" name="image" type="text" value="'.$paper['image'].'" class="text-gray-600 text-[1rem] w-[40rem] bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" > ';
+        echo '<input id="image" name="image" type="text" value="'.$paper['image'].'" class="text-gray-600 text-[1rem] w-[34rem] bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" > ';
         echo ' <div  class="flex justify-center flex-col text-center items-center">';
         echo ' <div class="text-[1.4rem] font-medium">Hình ảnh hiển thị</div> ';
         echo '<img src="'.$paper['image'].'" alt="Picture" class="w-[24rem]">';
@@ -162,15 +186,15 @@ $password = '';
         echo '</div>';
         
         echo '<div class="text-[2rem] font-medium">Đặc điểm nổi bật</div>';
-        echo '<textarea id="description" name="description" type="text" class="text-[1rem] bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" cols="90" rows="16">'.$paper['description'] .'</textarea>';;
+        echo '<textarea id="description" name="description" type="text" class=" w-[34rem] text-[1rem] bg-gray-10 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" cols="90" rows="16">'.$paper['description'] .'</textarea>';;
         echo '</div>';
         echo '</div>';
     }
 ?>
 <div class="flex flex-row">
 
-    <a href="/techadmin/admin/news/index" class="flex justify-center items-center m-[2rem]">
-    <button type="button" class="text-[2.4rem] inline-flex items-center px-3 py-2  font-medium text-center text-white bg-[#3DBC72] rounded-lg hover:bg-[#55DCA2] hover:scale-110  w-[20rem] text-center flex flex-row justify-center">
+    <a href="/techadmin/admin/news/index" class="flex justify-center items-center m-[1rem]">
+    <button type="button" class="text-[2rem] inline-flex items-center px-3 py-2  font-medium text-center text-white bg-[#3DBC72] rounded-lg hover:bg-[#55DCA2] hover:scale-110  w-[16rem] text-center flex flex-row justify-center">
                         Quay lai
                         <svg xmlns="http://www.w3.org/2000/svg" class="ms-[1.4rem] w-[3rem] h-[2.6rem]" viewBox="0 0 77 73" fill="none">
                     <path d="M38.5 0C17.2287 0 0 16.2481 0 36.3085C0 56.369 17.2287 72.617 38.5 72.617C59.7713 72.617 77 56.369 77 36.3085C77 16.2481 59.7713 0 38.5 0ZM38.5 9.07713V27.2314H67.375V45.3856H38.5V63.5399L9.625 36.3085L38.5 9.07713Z" fill="white"/>
@@ -178,8 +202,8 @@ $password = '';
     </button>
     </a>
 
-    <div class="flex justify-center items-center m-[2rem]">
-    <button type="submit" class="text-[2.4rem] inline-flex items-center px-3 py-2  font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 hover:scale-110  w-[20rem] text-center flex flex-row justify-center">
+    <div class="flex justify-center items-center m-[1rem]">
+    <button type="submit" class="text-[2rem] inline-flex items-center px-3 py-2  font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 hover:scale-110  w-[16rem] text-center flex flex-row justify-center">
                         Chỉnh sửa
                         <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70 70" fill="none" class="ms-[2rem] w-[2rem] h-[2.6rem]">
                     <path d="M52.2042 0L43.5035 8.7007L60.9049 26.1021L69.6056 17.4014L52.2042 0ZM34.8028 17.4014L0 52.2042V69.6056H17.4014L52.2042 34.8028L34.8028 17.4014Z" fill="white"/>
@@ -192,7 +216,7 @@ $password = '';
 </form>
 
 <!-- ----------------------------list papers------------------------------------------------ -->
-<div class=" max-w-sm p-4 bg-[#E2F9EC] border border-gray-220 rounded-lg shadow sm:p-6 " style="width:30%; max-height: 34rem;">
+<div class=" max-w-sm p-[1rem] bg-[#E2F9EC] border border-gray-220 rounded-lg shadow sm:p-6 " style=" max-height: 43rem;">
             <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl">
             BÀI VIẾT ĐƯỢC XEM NHIỀU NHẤT
             </h5>
@@ -203,7 +227,7 @@ $password = '';
  
             // Lấy tất cả các dòng dữ liệu từ kết quả truy vấn
             $papers2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-            echo ' <ul class="my-4 space-y-3">';
+            echo ' <ul class="my-4 space-y-3 flex flex-col content-center h-[38rem] items-center">';
             $i =1;
             forEach ($papers2 as $paper2Item) {
                 // $query_string = http_build_query($paper2Item);
