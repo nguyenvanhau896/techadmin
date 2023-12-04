@@ -26,7 +26,7 @@ forEach ($papers as $paperItem) {
                 <a href="">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">'.$paperItem['name'].'</h5>
                 </a>';
-        echo '<p class="mb-3 font-normal text-gray-700 ">'.substr($paperItem['description'],27,120).'...</p>';
+        echo '<p class="mb-3 font-normal text-gray-700 ">'.substr($paperItem['description'],0,120).'...</p>';
         echo '<a href="/techadmin/admin/editPaper/index?id='.$paperItem['id'].'" class="absolute text-[1.2rem] bottom-2 left-[2rem] inline-flex items-center px-3 py-2  font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[8.6rem] text-center flex flex-row justify-center">
                     Chỉnh sửa
                     <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70 70" fill="none" class="ms-2 w-[1rem] h-[1.6rem]">
