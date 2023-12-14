@@ -15,7 +15,7 @@
         </a>
     </div>
     <div class="col-span-1 my-auto">
-        <a href="#" class="flex flex-row gap-3 p-1 items-center hover:bg-[#fff0d4] hover:rounded-lg justify-center hover:border-2 hover:border-[#111]">
+        <a href="/techadmin/admin/news/index" class="flex flex-row gap-3 p-1 items-center hover:bg-[#fff0d4] hover:rounded-lg justify-center hover:border-2 hover:border-[#111]">
             <img src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/news-512.png" alt="icon" class="w-6">
             <span class="text-base font-semibold">Tin tức</span>
         </a>
